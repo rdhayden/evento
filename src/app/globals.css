@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Note that tailwind does not recomend setting custom classes in globals.css,
+   but for small reusable utility classes like this the alternative is to replicate
+   it multiple times. This changes the scale of the element on hover, focus, and
+   active states, and adds a transition for smoothness */
+.state-effects {
+  @apply hover:scale-105 focus:scale-105 active:scale-[1.02] transition;
+}
+
 /* SCROLLBAR STYLING */
 /* Chrome, Edge, and Safari */
 ::-webkit-scrollbar {

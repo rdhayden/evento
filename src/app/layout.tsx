@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description: 'Making events easy to find and share',
 };
 
+// layouts are never rerendered, the page file is embedded inside the layout
+// so the layout is persistent across navigations
+
 export default function RootLayout({
   children,
 }: {
@@ -20,6 +23,7 @@ export default function RootLayout({
   // overflow-y-scroll class applied to the body to ensure scrollbar is always visible
   // to prevent layout shift when navigating between pages with different heights that
   // may or may not require scrolling
+  // Also note the scrollbar can't be styled in tailwind, so we've put it's styling in globals.css
   return (
     <html lang="en">
       <body

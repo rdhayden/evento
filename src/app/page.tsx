@@ -27,8 +27,10 @@ export default function Home() {
         <div>
           {/* we could use another flex box to space these but can also use space-x to add space on the x axis */}
           <div className="space-x-2 font-semibold">
-            <Link href="/events/london">London</Link>
-            <Link href="/events/milan">Milan</Link>
+            {/* if we use <a> instead of Link, the page will do a full reload instead of client side navigation
+              Next.js will also prefetch events linked to by Link components */}
+            <Link href="/events/Austin">Austin</Link>
+            <Link href="/events/Seattle">Seattle</Link>
           </div>
         </div>
       </section>
